@@ -13,5 +13,6 @@
 In your terminal, run:
 
 ```
-npm start
+cd app
+npm run dev
 ```
