@@ -1,5 +1,5 @@
 # Project Name :octocat:
-### Team Members: Alyssa Hammonds, Roman (Gabe) Chavez, Ricardo (Rico) Boone, Lucas Vidal
+Team Members: Alyssa Hammonds, Roman (Gabe) Chavez, Ricardo (Rico) Boone, Lucas Vidal
 
 ## Project Description
 
