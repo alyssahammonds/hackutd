@@ -11,10 +11,13 @@ Goldman's Marketmind is a cutting-edge financial analytics project designed to r
 - React 
 - Tailwind
 - Chart.js
+- Figma
 
 **Backend:**
-- Java
-- Api's ... fill this out later
+- Python
+- Tensorflow
+- Flask
+  
 ## How to Compile 💻
 *Note: You will need Node.js installed*
 
@@ -26,3 +29,7 @@ npm run dev
 ```
 ## Recourses Used: ♻️
 - https://design.gs.com/foundation/color-system
+- https://housestockwatcher.com/
+
+### Happy Hacking!
+![](https://media.giphy.com/media/JsE9qckiYyVClQ5bY2/giphy.gif)
