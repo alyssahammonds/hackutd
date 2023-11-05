@@ -6,6 +6,8 @@ Team Members: Alyssa Hammonds, Roman (Gabe) Chavez, Ricardo (Rico) Boone, Lucas 
 ## Tech Stack
 **Frontend:**
 - React
+- Tailwind
+- Chart.js
 
 ## How to Compile
 *Note: You will need Node.js installed*
