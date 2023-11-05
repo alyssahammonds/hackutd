@@ -1,15 +1,21 @@
-# Project Name :octocat:
-Team Members: Alyssa Hammonds, Roman (Gabe) Chavez, Ricardo (Rico) Boone, Lucas Vidal
+# Goldman's MarketMinds 💸
+Hackathon project made for Goldman Sachs sponsored challenge.
+
+Team members: Alyssa Hammonds, Roman (Gabe) Chavez, Ricardo (Rico) Boone, Lucas Vidal
 
 ## Project Description
+Goldman's Marketmind is a cutting-edge financial analytics project designed to revolutionize stock market predictions and investment strategies. Leveraging the power of web scraping and advanced Artificial Intelligence/Machine Learning (AI/ML) algorithms, this project aims to provide investors with invaluable insights to make informed decisions in the volatile world of finance.
 
-## Tech Stack
+## Tech Stack :octocat:
 **Frontend:**
-- React
+- React 
 - Tailwind
 - Chart.js
 
-## How to Compile
+**Backend:**
+- Java
+- Api's ... fill this out later
+## How to Compile 💻
 *Note: You will need Node.js installed*
 
 In your terminal, run:
@@ -18,3 +24,5 @@ In your terminal, run:
 cd app
 npm run dev
 ```
+## Recourses Used: ♻️
+- https://design.gs.com/foundation/color-system
