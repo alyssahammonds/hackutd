@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ALL CSS GOES HERE */
+/* Make background of home page gray */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  background-color: #DCE3E8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+main {
+  flex-direction: row;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+nav {
+  background-color: #2A3F4D;
+  height: 3.5vw;
+  color: #fff;
+  font: 30px goldman-sans;
+  flex-direction: row;
+  justify-content: left;
 }
+
+ul {
+  font: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+
