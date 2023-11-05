@@ -14,11 +14,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping(path = "/congress")
-public class CongressTrades {
+@RequestMapping(path = "/senate")
+public class SenateTracker {
 
     private String generateAPIGet(LocalDate date) {
-        final String API_BASE = "https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/";
+        final String API_BASE = "https://senate-stock-watcher-data.s3-us-west-2.amazonaws.com/";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM_dd_yyyy");
         return API_BASE + "data/transaction_report_for_" + formatter.format(date) + ".json";
     }
@@ -67,3 +67,4 @@ public class CongressTrades {
     }
 
 }
+
