@@ -7,6 +7,7 @@ import News from './components/News';
 export default function Home() {
   return (
     <main>
+      <link rel="icon" type="image/x-icon" href="./favicon.ico"></link>
       <Navbar />
       <Welcome />
       <MarketPerformance />

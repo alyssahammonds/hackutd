@@ -7,16 +7,20 @@ import { Line } from 'react-chartjs-2';
 Chart.register(CategoryScale);
 Chart.register(Colors);
 
+function calculateNext(prev: number, reprev: number) {
+    return (prev) + (prev - reprev);
+}
+
 const MarketPerformance: React.FC = () => {
   const [chartData, setChartData] = useState<number[]>([]);
   useEffect(() => {
-    const randomData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 100));
+    const randomData = [26.29, 1.36, 1.40, 1.53, 1.23, 1.21, 1.06]//Array.from({ length: 7 }, () => Math.floor(Math.random() * 100));
     setChartData(randomData);
   }, []);
 
   const [predictedChartData, setPredictedChartData] = useState<number[]>([]);
     useEffect(() => {
-    const randomData = Array.from({ length: 2 }, () => Math.floor(Math.random() * 100));
+    const randomData = [1.06, calculateNext(1.06, 1.21)]; //Array.from({ length: 2 }, () => Math.floor(Math.random() * 100));
     setPredictedChartData(randomData);
     }, []);
 
@@ -68,7 +72,7 @@ const MarketPerformance: React.FC = () => {
     // make an array of comapny names
     const companyNames = ["Apple", "Google", "Microsoft", "Amazon", "Facebook", "Tesla", "Netflix", "Goldman Sachs", "JP Morgan", "IBM", "Intel", "Cisco", "Oracle", "Adobe", "PayPal", "Visa", "Mastercard", "Salesforce", "Starbucks", "McDonalds", "Walmart", "Target", "Home Depot", "Costco", "Nike", "Coca-Cola", "Pepsi", "Disney", "Exxon Mobil", "Chevron", "Verizon", "AT&T", "Boeing", "Lockheed Martin", "SpaceX", "Nvidia", "AMD", "UPS", "FedEx", "American Airlines", "Delta Airlines", "Southwest Airlines", "United Airlines", "General Motors", "Ford", "General Electric", "IBM", "HP", "Dell", "T-Mobile", "Qualcomm", "Nokia", "Sony", "Nintendo", "Spotify", "Uber", "Lyft", "Airbnb", "DoorDash", "Robinhood", "Coinbase", "Zoom", "TikTok", "Reddit", "Snapchat", "Twitter", "Pinterest", "Twitch", "Tinder", "Etsy", "Shopify", "Ebay", "PayPal", "Venmo"];
     //grab a random company name
-    const randomCompanyName = companyNames[Math.floor(Math.random() * companyNames.length)];   
+    const randomCompanyName = "Google";//companyNames[Math.floor(Math.random() * companyNames.length)];   
 
 
     const data = {
