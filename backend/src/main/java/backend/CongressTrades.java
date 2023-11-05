@@ -4,9 +4,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping(path = "/congress")
@@ -34,17 +40,31 @@ public class CongressTrades {
     @GetMapping(
             path = "/",
             produces = "application/json")
-    public String getCongressTrades()
-    {
-        LocalDate start = LocalDate.of(2020, 6, 18);
-        LocalDate end = LocalDate.of(2021, 6, 18);
+    public String getCongressTrades() throws IOException, InterruptedException {
+
+        LocalDate start = LocalDate.of(2021, 4, 11);
+        LocalDate end = LocalDate.of(2023, 4, 11);
 
         ArrayList<String> calls = generateAllAPIGets(start, end);
+        ArrayList<String> responses = new ArrayList<>();
+        var client = HttpClient.newHttpClient(); //HTTP client
 
-        // Add actual GET request for the calls
+
+        for (String call : calls) {
+            var request = HttpRequest.newBuilder()
+                    .uri(URI.create(call))
+                    .GET()
+                    .build();
+
+            // use the client to send the request
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if(response.statusCode() == 200) {
+                responses.add(response.body());
+            }
+        }
 
 
-        return "";
+        return responses.toString();
     }
 
 }
