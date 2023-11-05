@@ -65,17 +65,23 @@ const MarketPerformance: React.FC = () => {
     const startingPointIndex = labels.indexOf("Q3-2023");
     const extendedPredictedChartData = Array(startingPointIndex).fill(null).concat(predictedChartData);
 
+    // make an array of comapny names
+    const companyNames = ["Apple", "Google", "Microsoft", "Amazon", "Facebook", "Tesla", "Netflix", "Goldman Sachs", "JP Morgan", "IBM", "Intel", "Cisco", "Oracle", "Adobe", "PayPal", "Visa", "Mastercard", "Salesforce", "Starbucks", "McDonalds", "Walmart", "Target", "Home Depot", "Costco", "Nike", "Coca-Cola", "Pepsi", "Disney", "Exxon Mobil", "Chevron", "Verizon", "AT&T", "Boeing", "Lockheed Martin", "SpaceX", "Nvidia", "AMD", "UPS", "FedEx", "American Airlines", "Delta Airlines", "Southwest Airlines", "United Airlines", "General Motors", "Ford", "General Electric", "IBM", "HP", "Dell", "T-Mobile", "Qualcomm", "Nokia", "Sony", "Nintendo", "Spotify", "Uber", "Lyft", "Airbnb", "DoorDash", "Robinhood", "Coinbase", "Zoom", "TikTok", "Reddit", "Snapchat", "Twitter", "Pinterest", "Twitch", "Tinder", "Etsy", "Shopify", "Ebay", "PayPal", "Venmo"];
+    //grab a random company name
+    const randomCompanyName = companyNames[Math.floor(Math.random() * companyNames.length)];   
+
+
     const data = {
     labels: labels,
     datasets: [
       {
-        label: '[Company Name] Performance',
+        label: randomCompanyName + ' Performance',
         data: chartData,
         borderColor: '#0D4EA6',
         backgroundColor: '#0D4EA6',
       },
       {
-        label: '[Company Name] Predicted Performance',
+        label: randomCompanyName + ' Predicted Performance',
         data: extendedPredictedChartData,
         borderColor: '#52A31D',
         backgroundColor: '#52A31D',
@@ -85,11 +91,14 @@ const MarketPerformance: React.FC = () => {
   };
 
   return (
+    <div className='h-screen'>
+    <h1 className='text-6xl font-bold text-center text-[#3E5463] drop-shadow-lg'>Market Performance</h1>
     <div className="container mx-auto shadow-xl h-fit rounded-lg bg-white mt-8 font-medium text-xl center p-5">
-        Market Performance
+        {/* Select a company to view its performance and predicted performance. */}
         <div className="container mx-auto h-fit rounded-lg bg-slate-50 mt-8 font-medium p-5"> 
             <Line className="self-center" options={options} data={data} />
-        </div> 
+        </div>  
+    </div>
     </div>
   );
 };
